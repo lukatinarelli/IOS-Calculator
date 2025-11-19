@@ -1,151 +1,80 @@
-<h1 align="center">
-  <img src="./images/icon.png"/>
-  IOS Calculator
-</h1>
-
-
-
 <p align="center">
-  <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
-  <img alt="GitHub License" src="https://img.shields.io/github/license/lukatinarelli/HTBmachines?style=flat&color=red">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/lukatinarelli/HTBmachines?style=flat&color=yellow">
-  <img alt="Shell Script" src="https://img.shields.io/badge/Shell_Script-121011?style=flat&logo=gnu-bash&logoColor=white">
-  <img alt="JSON" src="https://img.shields.io/badge/json-5E5C5C?style=flat&logo=json&logoColor=white">
-  <img alt="HTB" src="https://img.shields.io/badge/HackTheBox-111927?style=flat&logo=Hack%20The%20Box&logoColor=9FEF00">
+  <img src="./images/icon.png" width="90" height="90"/>
 </p>
 
-## 📚 Índice
-- [Introducción](#-introducción)
-- [Aviso Importante ⚠️](#%EF%B8%8F-aviso-importante-cambio-de-la-base-de-datos-api)
-- [Características](#-características)
-- [Instalación](#-instalación)
-- [Uso](#-uso)
-- [Créditos](#-créditos)
-- [Licencia](#%EF%B8%8F-licencia)
+<h1 align="center">iOS-Calculator</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/STATUS-IN%20DEVELOPMENT-green?style=for-the-badge">
+  <img alt="GitHub License" src="https://img.shields.io/github/license/lukatinarelli/iOS-Calculator?style=for-the-badge&color=red">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/lukatinarelli/iOS-Calculator?style=for-the-badge&color=yellow">
+  <img alt="Python Script" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
+  <img alt="GUI" src="https://img.shields.io/badge/GUI-Tkinter-yellowgreen?style=for-the-badge"> 
+</p>
 
 ---
 
-## 📜 Introducción
-HTBMachines es un **potente *script* en Bash** diseñado para **consultar información detallada** sobre máquinas de Hack The Box, VulnHub y PortSwigger. Este proyecto se basa en la base de datos y tutoriales proporcionados por el trabajo de **[@S4vitar](https://github.com/S4vitar)**.
+## 📜 Project Description
+
+This is a desktop application developed as a **visually faithful clone of the native iOS Calculator interface**. Built entirely in **Python 3** using the **Tkinter** library, the project focuses on replicating the aesthetic, layout, and user experience of the mobile application.
 
 ---
 
-## ⚠️ Aviso Importante: Cambio de la Base de Datos (API)
+## 🖼️ Visual Preview
 
-Este proyecto se concibió utilizando la API de **infosecmachines.io** (de [JavierMolines](https://github.com/JavierMolines/)), la cual permitía descargar la base de datos de máquinas sin autenticación.
-
-> [!CAUTION]
-> **CAMBIO RECIENTE.** El dominio `infosecmachines.io` ahora redirige a la nueva plataforma **hackingvault.com**. La API de la nueva web **NO permite la descarga de datos sin sesión iniciada.**
-
-**Esto implica que:**
-* El archivo `infosecmachines.json` **viene incluido en el repositorio** con la base de datos más reciente en el momento de la clonación. **No necesitas seguir estos pasos para usar el script.**
-* La **autenticación es obligatoria si deseas actualizar la Base de Datos (`-u`, `--update`)** para obtener nuevas máquinas, ya que la API de Hacking Vault requiere tu *cookie* de sesión.
-
-### 🔑 Instrucciones para Obtener el Token de Sesión
-
-Para que el script funcione, debes proporcionar tu **cadena de *cookies*** de sesión. El proceso es el siguiente:
-
-#### Copiar el comando cURL completo
-Esta es la forma más robusta, ya que copia todas las cabeceras necesarias:
-
-1.  Inicia sesión en **[hackingvault.com](https://hackingvault.com/)**.
-2.  Abre F12 (Herramientas de Desarrollador) y ve a la pestaña **`Network`**.
-3.  Filtra por **Fetch/XHR**.
-4.  Busca la petición a `tutorials?page=X&limit=12` y haz clic derecho.
-5.  Selecciona **`Copy`** > **`Copy as cURL (bash)`**.
-6.  Al ejecutar el comando de actualización, el script te pedirá que pegues la cadena cURL en la consola.
+[screenshots...]
 
 ---
 
-## 🔨 Características
-* Búsqueda de máquinas por nombre (`-m`, `--machine`).
-* Actualización del archivo `infosecmachines.json` (`-u`, `--update`).
-* Información del *script* y ayuda (`-h`, `--help`).
-* Versión del *script* (`-v`, `--version`).
-* Autocompletado opcional.
+## 💾 Installation
+The project is lightweight and does not require external Python dependencies, as it uses the standard `tkinter` library.
 
----
+### Requirements:
+ - **Python 3.x** (Version 3.6 or higher recommended).
+ - **Tkinter** (Usually included with the standard Python installation).
 
-## 💾 Instalación
+### Instructions:
+1. Clone the repository
 
-### Dependencias:
-* `curl`
-* `jq`
-* `md5sum`
-* `tput`
-* `figlet`
-
-### Instrucciones:
-```bash
-# Clonar el repositorio
-git clone https://github.com/lukatinarelli/HTBmachines.git
-cd HTBmachines
-
-# Dar permisos de ejecución
-chmod +x htbmachines.sh
+```Bash
+git clone [https://github.com/lukatinarelli/iOS-Calculator.git](https://github.com/lukatinarelli/iOS-Calculator.git)
+cd iOS-Calculator
 ```
 
-> [!TIP]
-> Puedes añadir la ruta del repo en tu **PATH** para ejecutar el script con `htbmachines.sh` desde cualquier directorio.
-
-### Autocompletado (opcional)
-Hemos separado la lógica en dos archivos para máxima compatibilidad y evitar bugs raros:
-
-| Shell | Archivo a Usar |
-| :---: | :--- |
-| **Zsh** | `.htb-autocomplete.zsh` |
-| **Bash** | `.htb-autocomplete.bash` |
-
-Para habilitarlo, usa el siguiente comando con el archivo que corresponda a tu shell:
-```bash
-source .htb-autocomplete.<tu_shell>
-```
-#### Ejemplo: 
-```bash
-source .htb-autocomplete.zsh
-```
 > [!NOTE]
-> Si quieres que el autocompletado sea permanente, añade la línea source correspondiente a tu archivo de configuración (`~/.zshrc` o `~/.bashrc`).
+> No additional Python modules need to be installed.🚀
 
 ---
 
-## 🚀 Uso
+## 🚀 Usage
+Simply run the main script to start the calculator's graphical interface.
 
-| Argumento Corto | Argumento Largo | Descripción |
-| :-------------: | :-------------: | :---------- |
-| `-m` | `--machine` | Busca información detallada sobre una máquina de HTB, VulnHub o PortSwigger. |
-| `-i` | `--ip` | Buscar máquinapor dirección IP. |
-| `-d` | `--difficulty` | Filtar máquinas por dificultad. |
-| `-u` | `--update` | Actualiza el archivo de datos principal (`infosecmachines.json`). |
-| `-h` | `--help` | Muestra el menú de ayuda e información del script. |
-| `-v` | `--version` | Muestra la versión actual del script. |
+```Bash
+python3 calculadora.py
+```
 
----
+### Funcionalidades:
 
-## 🔧 Cosas por mejorar (Tareas)
-
-Este es el *checklist* de funcionalidades y mejoras planificadas para las próximas versiones:
-
-- [X] **Filtros:** Añadir más filtros como el de -os (sistema operativo), -d (dificultad)...
-- [ ] **Autocompletado:** Solucionar el fallo al usar comillas en los nombres de máquina.
-- [ ] **Ergonomía:** Implementar sugerencias de nombres ("¿Quieres decir: ...") si la máquina no es encontrada.
-- [ ] **Metadatos:** Añadir un nuevo campo `resuelta` a la base de datos JSON.
-- [X] **Documentación:** Mostrar la ayuda y el uso correcto para cada *flag* individual.
-- [X] **UX (User Experience):** Añadir colores en la salida del comando de búsqueda (`-m`).
-- [ ] **Mantenimiento:** Implementar un sistema básico de *logs*.
-- [X] **Automatización:** Si al filtrar el resultado solo hay una máquina, mostrar la información de esa máquina automáticamente.
-- [ ] **Interactivo:** Desarrollar un modo interactivo con lectura de teclado para navegación.
+| Button | Function  |
+| :-------------: | :---------- |
+| `AC` | Clears the entire display (All Clear). |
+| `C` | Deletes the last digit or the last command. |
+| `0-9, .` | Number and decimal input. |
+| `+, -, *, /` | Basic arithmetic operations. |
+| `=` | Evaluates the current expression. |
+| `^` | Exponentiation (Power). |
+| `%` | Percentage operation. |
 
 ---
 
-## 🌟 Créditos
+## 🔧 Roadmap
+This is the **checklist of functionalities** and improvements planned for future versions:
+- [X] **Interface:** Complete visual structure, including round buttons and iOS colors.
+- [X] **Input:** Restrict input to the interface (keyboard lock).
+- [X] **Calculation Logic:** Implement the logic for expression evaluation (=).
+- [X] **'C' Button:** Implement the functionality to delete the last digit.
+- [X] **Special Functions:** Implement percentage (%) and power (^) operations.
+- [ ] **UX (User Experience)**: Add robust handling for division-by-zero or invalid syntax errors. 
 
-Este script se creó como parte del **curso de Hack4U** impartido por **[@S4vitar](https://github.com/S4vitar)**. La base de datos y los tutoriales utilizados son propiedad intelectual de **S4vitar**.
-
-> [!CAUTION]
-> **Nota Importante:** Este proyecto está destinado exclusivamente para **fines educativos** en el contexto del **Hacking Ético**.
-
----
-
-## ⚖️ Licencia
-Este proyecto está bajo la [Licencia MIT](LICENSE).
+## ⚖️ License
+This project is licensed under the [MIT License](LICENSE).
