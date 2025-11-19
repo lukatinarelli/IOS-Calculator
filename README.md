@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/icon.png" width="90" height="90"/>
+  <img src="./images/icon.png"/>
 </p>
 
 <h1 align="center">iOS-Calculator</h1>
