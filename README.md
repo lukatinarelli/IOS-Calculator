@@ -37,7 +37,7 @@ The project is lightweight and does not require external Python dependencies, as
 1. Clone the repository
 
 ```Bash
-git clone [https://github.com/lukatinarelli/iOS-Calculator.git](https://github.com/lukatinarelli/iOS-Calculator.git)
+git clone https://github.com/lukatinarelli/iOS-Calculator.git
 cd iOS-Calculator
 ```
 
